@@ -13,11 +13,12 @@
 <body>
     <div>
         @{
-            MVCDay1.Models.Employee emp = (MVCDay1.Models.Employee)ViewData["Employee"];
+            MVCDay1.Models.Employee emp = (MVCDay1.Models.Employee)ViewBag.Employee;
         }
-
-        <b>Employee Details </b><br />
-        Employee Name : @emp.FirstName @emp.LastName <br />
+        Employee Details
+        <br />
+        Employee Name: @emp.FirstName @emp.LastName
+        <br />
         Employee Salary: @emp.Salary.ToString("C")
     </div>
 </body>
