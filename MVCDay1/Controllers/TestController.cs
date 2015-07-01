@@ -1,4 +1,5 @@
 ﻿using MVCDay1.Models;
+using MVCDay1.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,21 @@ namespace MVCDay1.Controllers
             emp.LastName = "Marla";
             emp.Salary = 20000;
 
-            return View("MyView", emp);
+            EmployeeViewModel vmEmp = new EmployeeViewModel();
+            vmEmp.EmployeeName = emp.FirstName + " " + emp.LastName;
+            vmEmp.Salary = emp.Salary.ToString("C");
+            if (emp.Salary > 15000)
+            {
+                vmEmp.SalaryColor = "yellow";
+            }
+            else
+            {
+                vmEmp.SalaryColor = "green";
+            }
+
+            vmEmp.UserName = "Admin";
+
+    return View("MyView", vmEmp);
         }
     }
 }
