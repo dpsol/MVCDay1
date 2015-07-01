@@ -21,8 +21,7 @@ namespace MVCDay1.Controllers
             emp.LastName = "Marla";
             emp.Salary = 20000;
 
-            ViewBag.Employee = emp;
-            return View("MyView");
+            return View("MyView", emp);
         }
     }
 }
